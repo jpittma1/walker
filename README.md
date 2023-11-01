@@ -25,7 +25,9 @@ cd ~/ros2_ws/src
 git clone https://github.com/jpittma1/walker.git
 ```
 # Resolve Dependencies using rosdep:
+```
 rosdep install -i --from-path src --rosdistro humble -y
+```
 
 # Build Instructions
 ```
