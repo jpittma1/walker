@@ -25,13 +25,21 @@ git clone https://github.com/jpittma1/walker.git
 ```
 - Build the workspace
 ```
-cd ~/ros2_ws/src
+cd ~/ros2_ws/
 colcon build --packages-select walker
-cd .. && . install/setup.bash
+source install/setup.bash
+<!-- cd .. && . install/setup.bash -->
 ```
 
 - Set turtlebot3 variable for model
 
 ```
 echo  "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
+```
+
+### Run Instructions
+
+```
+source install/setup.bash
+ros2 launch ros2_turtlebot gazebo.py
 ```
