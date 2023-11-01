@@ -46,5 +46,5 @@ echo  "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
 
 ```
 source install/setup.bash
-ros2 launch ros2_turtlebot gazebo.py
+ros2 launch walker launch.py
 ```
