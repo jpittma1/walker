@@ -28,8 +28,7 @@ class Walker : public rclcpp::Node {
  Walker() : Node("Walker"), collision_distance_(0.5) {
     RCLCPP_INFO(this->get_logger(), "Setting up publisher and subcriber");
     vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("cmd_vel", 10);
-    subscription_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-        "scan", 10, std::bind(&Walker::scan_callback, this, _1));
+    subscription_ = this->create_subscription<sensor_msgs::msg::LaserScan>("scan", 10, std::bind(&Walker::scan_callback, this, _1));
     RCLCPP_INFO(this->get_logger(), "Walker Node Initialized!");
   }
 

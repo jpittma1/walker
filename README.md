@@ -9,26 +9,29 @@ Turtlebot3 Simulation using Gazebo in ROS2 for course ENPM808X ROS Assignment 4
 Jerry Pittman, Jr.
 
 ## Dependencies
-- Ubuntu 20.0 or above
+- Ubuntu 22.04 or above
 - ROS2 Humble
-- Gazebo Harmonic
+- Gazebo Garden, Harmonic or 11?!?
+<!-- - ros_gz_example_bringup -->
 
-## Build
+## Download/Install
 - Create a workspace
 ```
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 ```
-- Clone the repository
+- Clone the repository into src folder
 ```
 git clone https://github.com/jpittma1/walker.git
 ```
-- Build the workspace
+# Resolve Dependencies using rosdep:
+rosdep install -i --from-path src --rosdistro humble -y
+
+# Build Instructions
 ```
 cd ~/ros2_ws/
 colcon build --packages-select walker
 source install/setup.bash
-<!-- cd .. && . install/setup.bash -->
 ```
 
 - Set turtlebot3 variable for model
