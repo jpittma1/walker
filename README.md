@@ -11,7 +11,7 @@ Jerry Pittman, Jr.
 ## Dependencies
 - Ubuntu 22.04 or above
 - ROS2 Humble
-- Gazebo Garden, Harmonic or 11?!?
+- Gazebo 11 (Classic)
 <!-- - ros_gz_example_bringup -->
 
 ## Download/Install
