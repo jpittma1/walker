@@ -2,7 +2,7 @@
  * @file walker.cpp
  * @author Jerry Pittman, Jr. (jpittma1@umd.edu)
  * @brief ENPM808X ROS Assignment 4
- * Waffle Pi Turtlebot3 Robot (camera sensor w/ depth), differential Drive
+ * Turtlebot4 Robot (camera sensor w/ depth), differential Drive
  * Velocity control topic: geometry_msgs::msg::Twist>("cmd_vel",10)
  *  Sensor data topic: sensor_msgs::msg::LaserScan>("scan",10)
  * @version 1.0
@@ -17,8 +17,6 @@
 #include <string>
 #include <vector>
 
-// #include <rclcpp/rclcpp.hpp>
-
 #include "geometry_msgs/msg/twist.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
@@ -26,6 +24,10 @@
 
 using std::placeholders::_1;
 
+/**
+ * @brief Walker class
+ * 
+ */
 class Walker : public rclcpp::Node {
 public:
 /**
