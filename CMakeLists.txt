@@ -15,13 +15,6 @@ find_package(sensor_msgs REQUIRED)
 add_executable(walker src/walker.cpp)
 ament_target_dependencies(walker rclcpp std_msgs geometry_msgs sensor_msgs)
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  set(ament_cmake_copyright_FOUND TRUE)
-  set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
-
 install(TARGETS
   walker
   DESTINATION lib/${PROJECT_NAME})
@@ -29,5 +22,12 @@ install(TARGETS
 install(
   DIRECTORY launch
   DESTINATION share/${PROJECT_NAME})
+
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  set(ament_cmake_copyright_FOUND TRUE)
+  set(ament_cmake_cpplint_FOUND TRUE)
+  ament_lint_auto_find_test_dependencies()
+endif()
 
 ament_package()
