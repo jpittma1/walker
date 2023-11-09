@@ -9,29 +9,48 @@ Turtlebot3 Simulation using Gazebo in ROS2 for course ENPM808X ROS Assignment 4
 Jerry Pittman, Jr.
 
 ## Dependencies
-- Ubuntu 20.0 or above
+- Ubuntu 22.04 or above
 - ROS2 Humble
-- Gazebo Harmonic
+- Gazebo Ignition (Fortress)
+- turtlebot4_desktop (turtlebot4_viz, turtlebot_description)
+- turtlebot4_ignition_bringup
 
-## Build
+## Download/Install
 - Create a workspace
 ```
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 ```
-- Clone the repository
+- Clone the repository into src folder
 ```
 git clone https://github.com/jpittma1/walker.git
 ```
-- Build the workspace
+# Resolve Dependencies using rosdep:
 ```
-cd ~/ros2_ws/src
-colcon build --packages-select walker
-cd .. && . install/setup.bash
+rosdep install -i --from-path src --rosdistro humble -y
 ```
 
-- Set turtlebot3 variable for model
-
+# Build Instructions
 ```
-echo  "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
+cd ~/ros2_ws/
+colcon build --symlink-install --packages-select walker
+source install/setup.bash
+```
+
+### Run Instructions 
+without Rosbag
+```
+source install/setup.bash
+ros2 launch walker gz_launch.py
+```
+
+with Rosbag
+```
+source install/setup.bash
+ros2 launch walker gz_launch.py record:=True
+```
+
+To view ros_bag info
+```
+ros2 bag info walker_bag
 ```
