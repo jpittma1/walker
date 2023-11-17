@@ -12,8 +12,9 @@ Jerry Pittman, Jr.
 - Ubuntu 22.04 or above
 - ROS2 Humble
 - Gazebo Ignition (Fortress)
-- turtlebot4_desktop (turtlebot4_viz, turtlebot_description)
-- turtlebot4_ignition_bringup
+- g11_launch: turtlebot3 (burger)
+- gz_launch: turtlebot4 (standard)
+
 
 ## Download/Install
 - Create a workspace
